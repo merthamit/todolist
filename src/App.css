@@ -1,0 +1,229 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+  background-color: #EDE2DC;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.App{
+  max-width: 700px;
+  margin: 10px auto;
+  padding: 0 15px;
+}
+
+ul{
+  list-style: none;
+  margin: 0%;
+  padding: 0%;
+}
+
+.todo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  opacity: 0;
+  animation: todo 1s forwards;
+}
+
+.todo:last-child{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.todo:first-child{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.Todo-App-Background{
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background-color: #EDE2DC;
+  clip-path: polygon(0 0, 100% 0, 100% 41%, 0 100%, 0% 50%);
+  transition: all .5s;
+}
+
+.Todo-App-Background2{
+  transition: all .5s;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background-color: #EEC7B7;
+  clip-path: polygon(0 0, 100% 0, 100% 41%, 0 100%, 0% 50%);
+}
+
+.todo__edit--input{
+  width: 100%;
+}
+
+.todolist__input{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 15px 0;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 94%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.todolist__form{
+  margin-bottom: 15px;
+}
+
+.todo__edit{
+  background-color: #fff;
+  outline: none;
+  border: none;
+  transition: all 1s;
+  color: #023ABA;
+}
+.todo__delete{
+  background-color: #fff;
+  outline: none;
+  border: none;
+  transition: all 1s;
+  color: #FF1C22;
+}
+
+.todo__delete:hover{
+  transform: rotate(360deg);
+}
+
+.todo__edit:hover{
+  transform: rotate(360deg);
+}
+
+.todo__update{
+  background-color: #fff;
+  outline: none;
+  transition: .5s all;
+  color: #FF1C22;
+  border: 1px solid #FF1C22;
+}
+
+.todo__update:hover{
+  background-color: red;
+  color: #fff;
+}
+
+.todo__edit--input{
+  outline: none;
+  border: none;
+  position: relative;
+}
+
+
+.todo__name {
+  position: relative;
+}
+
+.todo:last-of-type{
+  animation: last 1s forwards;
+  opacity: 1;
+}
+
+.finish{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0%;
+  background-color: #333;
+  height: 2px;
+  width: 0;
+  animation: finish 1s forwards;
+}
+
+@keyframes last{
+  0%{
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+  100%{
+    background-color: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes finish{
+  0%{
+    width: 0;
+  }
+
+  100%{
+    width: 100%;
+  }
+}
+
+@keyframes todo{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
